@@ -1,0 +1,23 @@
+version: "3.3"
+
+services:
+
+  node-red-$UNIQUE:
+    image: nodered/node-red:3.0.2-18
+    container_name: node-red-$UNIQUE
+    hostname: node-red-$UNIQUE
+    environment:
+      - TZ=Australia/Melbourne
+    volumes:
+      - type: bind
+        source: /data/node-red-$UNIQUE
+        target: /data
+    ports:
+      - "1880:1880"
+    restart: always
+    networks:
+      - network-$UNIQUE
+
+networks:
+  network-$UNIQUE:
+    external: true

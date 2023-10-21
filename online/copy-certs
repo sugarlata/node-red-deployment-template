@@ -1,0 +1,3 @@
+cp /etc/letsencrypt/live/weather.sgarlata.com.au/* /data/node-red-weather/certs/
+chown ec2-user:ec2-user /data/node-red-weather/certs/*
+chmod 600 /data/node-red-weather/certs/*
